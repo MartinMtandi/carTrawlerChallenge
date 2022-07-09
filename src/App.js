@@ -1,6 +1,7 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Wrapper from './common/Wrapper';
 import Home from './pages/home/Home';
+import './App.css';
 
 function App() {
   

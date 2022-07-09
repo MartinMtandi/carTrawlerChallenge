@@ -1,0 +1,8 @@
+.box {
+    padding: 36px 0px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% auto 25%;
+  }

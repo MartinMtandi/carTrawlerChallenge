@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Header = () => {
+const Fleet = () => {
   return (
     <div>
-      Header
+      fleet
     </div>
   )
 }
 
-export default Header
+export default Fleet
