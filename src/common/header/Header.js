@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logo from '../../images/CarTrawler_Logo.jpg';
+import logo from '../../images/partner.svg';
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <div className='container'>
         <div className='nav'>
             <div>
-                <img height="70" src={logo} alt="logo" />
+                <img height="45" src={logo} alt="logo" />
             </div>
             <div>
                 <ul className='nav-item font-semibold'>

@@ -6,16 +6,15 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div className='container box'>
-        <div className='grid-container'>
-            <div>
-                <Filters />
-            </div>
-            <div>
-                <Fleet />
-            </div>
-            <div>
-                <Vendor />
+    <div className='body'>
+        <div className='container box'>
+            <div className='grid-container'>
+                <div>
+                    <Filters />
+                </div>
+                <div>
+                    <Fleet />
+                </div>
             </div>
         </div>
     </div>

@@ -1,8 +1,28 @@
 .container {
   width: 60%;
   margin: 0 auto;
+  color: #333333;
 }
 
 .font-semibold {
   font-weight: 600;
+}
+
+.paper {
+  padding: 14px 20px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary {
+  color: #FFFFFF;
+  background-color:  #E6356F;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 4px;
+  border: none;
+  font-size: medium;
 }

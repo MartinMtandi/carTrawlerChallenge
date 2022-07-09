@@ -4,5 +4,10 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 25% auto 25%;
-  }
+    grid-template-columns: 30% auto;
+}
+
+.body {
+    background-color: #EFEFEF;
+    min-height: 90vh;
+}
