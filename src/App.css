@@ -26,3 +26,7 @@
   border: none;
   font-size: medium;
 }
+
+button {
+  cursor: pointer;
+}
