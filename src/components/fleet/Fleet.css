@@ -3,11 +3,22 @@
     display: block;
     margin-bottom: 6px;
     margin-top: 6px;
+    line-height: 0px;
+}
+
+.button-component p {
+    color: #6b7280;
+    font-size: small;
 }
 
 .paper .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+.paper .grid-card {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 .paper .grid-container .grid-item {
@@ -47,4 +58,58 @@
 .item div span {
     margin-left: 5px;
     font-weight: 600;
+}
+
+.paper .grid-card .card .car-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.paper .grid-card .card {
+    border: 1px solid #C7C7CD;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 10px;
+}
+
+.card div .car-name {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.card div .car-price {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+}
+
+.card .description {
+    line-height: 0px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.feature-card span {
+    margin-left: 4px;
+}
+
+.feature-card {
+    border: 1px solid #C7C7CD;
+    margin: 0 5px;
+    padding: 4px 6px;
+    border-radius: 8px;
+}
+
+.features-bottom {
+    margin-bottom: 22px;
+    margin-top: 5px;
 }
