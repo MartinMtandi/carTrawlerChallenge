@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import cars from '../../utils/cars.json';
 import Filters from '../../components/filters/Filters';
 import Fleet from '../../components/fleet/Fleet';
@@ -7,10 +7,21 @@ import './Home.css';
 
 const Home = () => {
     const [fleet, setFleet] = React.useState();
-    const [priceFilter, setPriceFilter] = React.useState('')
+    const [priceFilter, setPriceFilter] = React.useState('lower-to-higher');
+    const [sortedCars, setSortedCars] = React.useState();
     let vehicles = cars[0].VehAvailRSCore.VehVendorAvails;
 
-    console.log(fleet);
+    const sortLowestToHighest = () => {
+        return fleet?.sort(function(a, b) { // SORT BY PRICE (LOWER TO HIGHER)
+            return Number(a.TotalCharge['@EstimatedTotalAmount']) - Number(b.TotalCharge['@EstimatedTotalAmount']);
+        });
+    }
+
+    const sortHighestToLowest = () => {
+        return fleet?.sort(function(a, b) { // SORT BY PRICE (HIGHEST TO LOWEST)
+            return Number(b.TotalCharge['@EstimatedTotalAmount']) - Number(a.TotalCharge['@EstimatedTotalAmount']);
+        });
+    }    
 
     const formatPayload = () => {
         const state = [];
@@ -22,26 +33,35 @@ const Home = () => {
             });
         });
 
-        const result = state.sort(function(a, b) { // SORT BY PRICE (LOWER TO HIGHER)
-            return Number(a.TotalCharge['@EstimatedTotalAmount']) - Number(b.TotalCharge['@EstimatedTotalAmount']);
-        });
-
-        setFleet(result);
+        setFleet(state);
     };
  
     React.useEffect(() => {
-        formatPayload();
+        formatPayload(); // FORMAT JSON PAYLOAD
     }, []);
+
+    React.useEffect(() => { // RUN THIS USEEFFECT TO RUN THE DEFAULT SORT OF PRICE
+        if(fleet){
+            let result = (priceFilter === 'lower-to-higher') ? sortLowestToHighest() : sortHighestToLowest();
+            setSortedCars(result);
+        }
+    }, [fleet]);
 
     return (
         <div className='body'>
             <div className='container box'>
                 <div className='grid-container'>
                     <div className='grid-left'>
-                        <Filters />
+                        <Filters  
+                            sortHighestToLowest={sortHighestToLowest}
+                            sortLowestToHighest={sortLowestToHighest}
+                            setPriceFilter={setPriceFilter} 
+                            setSortedCars={setSortedCars}
+                            priceFilter={priceFilter} 
+                        />
                     </div>
                     <div>
-                        <Fleet fleet={fleet} />
+                        <Fleet sortedCars={sortedCars} />
                     </div>
                 </div>
             </div>

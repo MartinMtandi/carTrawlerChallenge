@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 import transmission from '../../images/Icons/transmission.svg';
 import suitcase from '../../images/Icons/bag.svg';
@@ -11,10 +11,11 @@ import alamo from '../../images/Vendors/alamo.svg';
 import './Fleet.css';
 
 const Fleet = (props) => {
+    
     return (
         <div className='paper'>
             <div className='grid-card'>
-                {props.fleet ? props.fleet.map((el, index) => (
+                {props.sortedCars ? props.sortedCars.map((el, index) => (
                     <div className='card' key={index}>
                         <img className='car-image' height='100px' src={el.Vehicle.PictureURL} alt="car" />
                         <div className='description'>
@@ -68,4 +69,4 @@ const Fleet = (props) => {
     )
 }
 
-export default memo(Fleet)
+export default (Fleet)
