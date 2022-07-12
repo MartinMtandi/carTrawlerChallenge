@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import CurrencyFormat from 'react-currency-format';
 import transmission from '../../images/Icons/transmission.svg';
 import suitcase from '../../images/Icons/bag.svg';
@@ -6,7 +6,7 @@ import snowflake from '../../images/Icons/snowflake.svg';
 import fuel from '../../images/Icons/fuel.svg';
 import door from '../../images/Icons/door.svg';
 import person from '../../images/Icons/person.svg';
-import {TbManualGearbox} from 'react-icons/tb';
+import { TbManualGearbox } from 'react-icons/tb';
 import alamo from '../../images/Vendors/alamo.svg';
 import './Fleet.css';
 
@@ -23,38 +23,38 @@ const Fleet = (props) => {
                         </div>
                         <div>
                             <div className='features-container'>
-                            <div className='feature-card'>
-                                <img height="20px" src={fuel} alt="fuel" />
-                                <span>{el.Vehicle['@FuelType']}</span>
-                            </div>
-                            <div className='feature-card'>
-                                <img height="20px" src={suitcase} alt="suitcase" />
-                                <span>{el.Vehicle['@BaggageQuantity']}</span>
-                            </div>
-                            <div className='feature-card'>
-                                <img height="20px" src={door} alt="door" />
-                                <span>{el.Vehicle['@DoorCount']}</span>
-                            </div>
-                            {el.Vehicle['@AirConditionInd'] &&
                                 <div className='feature-card'>
-                                    <img height="20px" src={snowflake} alt="snowflake" />
+                                    <img height="20px" src={fuel} alt="fuel" />
+                                    <span>{el.Vehicle['@FuelType']}</span>
                                 </div>
-                            }
-                        </div>
-                        <div className='features-container features-bottom'>
-                            <div className='feature-card'>
-                                <img height="20px" src={transmission} alt="transmission" />
-                                <span>{el.Vehicle['@TransmissionType']}</span>
+                                <div className='feature-card'>
+                                    <img height="20px" src={suitcase} alt="suitcase" />
+                                    <span>{el.Vehicle['@BaggageQuantity']}</span>
+                                </div>
+                                <div className='feature-card'>
+                                    <img height="20px" src={door} alt="door" />
+                                    <span>{el.Vehicle['@DoorCount']}</span>
+                                </div>
+                                {el.Vehicle['@AirConditionInd'] &&
+                                    <div className='feature-card'>
+                                        <img height="20px" src={snowflake} alt="snowflake" />
+                                    </div>
+                                }
                             </div>
-                            <div className='feature-card'>
-                                <img height="20px" src={person} alt="person" />
-                                <span>{el.Vehicle['@PassengerQuantity']}</span>
+                            <div className='features-container features-bottom'>
+                                <div className='feature-card'>
+                                    <img height="20px" src={transmission} alt="transmission" />
+                                    <span>{el.Vehicle['@TransmissionType']}</span>
+                                </div>
+                                <div className='feature-card'>
+                                    <img height="20px" src={person} alt="person" />
+                                    <span>{el.Vehicle['@PassengerQuantity']}</span>
+                                </div>
+                                <div className='feature-card'>
+                                    <TbManualGearbox style={{ fontSize: '22px' }} />
+                                    <span>{el.Vehicle['@DriveType']}</span>
+                                </div>
                             </div>
-                            <div className='feature-card'>
-                                <TbManualGearbox style={{fontSize: '22px'}} />
-                                <span>{el.Vehicle['@DriveType']}</span>
-                            </div>
-                        </div>
                         </div>
                         <div className='button-component'>
                             <button className='btn-primary'>Book</button>
@@ -63,10 +63,9 @@ const Fleet = (props) => {
                     </div>
                 ))
                     : <React.Fragment></React.Fragment>}
-
             </div>
         </div>
     )
 }
 
-export default Fleet
+export default memo(Fleet)

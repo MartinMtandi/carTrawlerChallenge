@@ -11,3 +11,7 @@
     background-color: #EFEFEF;
     min-height: 90vh;
 }
+
+.grid-left {
+    padding-right: 16px;
+}

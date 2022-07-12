@@ -65,6 +65,10 @@
     margin: 0 auto;
 }
 
+.grid-card {
+    margin: 0 12px;
+}
+
 .paper .grid-card .card {
     border: 1px solid #C7C7CD;
     border-radius: 20px;

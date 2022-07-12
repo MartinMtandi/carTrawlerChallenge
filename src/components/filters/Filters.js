@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 const Filters = () => {
   return (
-    <div>
+    <div className='paper filter-paper'>
       filters
     </div>
   )
