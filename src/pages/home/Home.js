@@ -50,7 +50,7 @@ const Home = () => {
 
     return (
         <div className='body'>
-            <Legend />
+            <Legend vehicles={cars[0].VehAvailRSCore} />
             <div className='container box'>
                 <div className='grid-container'>
                     <div className='grid-left'>

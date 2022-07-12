@@ -6,21 +6,25 @@
 .legend .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
+    grid-column-gap: 16px;
 }
 
 .legend .grid-container div label, .legend .grid-container div input {
     display: block;
 }
 
-legend .grid-container div label {
+.legend .grid-container div label {
     color: #FFFFFF;
     font-weight: 600;
+    margin-bottom: 2px;
 }
 
-.legend .grid-container div input {
-   padding: 10px;
+.legend .grid-container div .form-control {
    border-radius: 4px; 
-   border: 1px solid  #64748B;
+   border: 1px solid  #FFFFFF;
    margin-bottom: 2px;
-   width: 90%;
+   width: 100%;
+   padding: 8px 6px;
+   box-sizing: border-box;
+   font-size: large;
 }
