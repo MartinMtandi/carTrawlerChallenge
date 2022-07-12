@@ -7,30 +7,31 @@ import fuel from '../../images/Icons/fuel.svg';
 import door from '../../images/Icons/door.svg';
 import person from '../../images/Icons/person.svg';
 import { TbManualGearbox } from 'react-icons/tb';
-import alamo from '../../images/Vendors/alamo.svg';
 import './Fleet.css';
+import Loader from '../../common/loader/Loader';
 
 const Fleet = (props) => {
-    
+  
     return (
         <div className='paper'>
+            {props.sortedCars ?
             <div className='grid-card'>
-                {props.sortedCars ? props.sortedCars.map((el, index) => (
+                 {props.sortedCars.map((el, index) => (
                     <div className='card' key={index}>
                         <img className='car-image' height='100px' src={el.Vehicle.PictureURL} alt="car" />
                         <div className='description'>
                             <p className='car-name'>{el.Vehicle.VehMakeModel['@Name']}</p>
                             <p className='car-price'><CurrencyFormat value={el.TotalCharge['@EstimatedTotalAmount']} displayType={'text'} thousandSeparator={true} prefix={el.TotalCharge['@CurrencyCode']} /></p>
                         </div>
-                        <div>
+                        <div className='grid-middle'>
                             <div className='features-container'>
-                                <div className='feature-card'>
-                                    <img height="20px" src={fuel} alt="fuel" />
-                                    <span>{el.Vehicle['@FuelType']}</span>
-                                </div>
                                 <div className='feature-card'>
                                     <img height="20px" src={suitcase} alt="suitcase" />
                                     <span>{el.Vehicle['@BaggageQuantity']}</span>
+                                </div>
+                                <div className='feature-card'>
+                                    <TbManualGearbox style={{ fontSize: '22px' }} />
+                                    <span>{el.Vehicle['@DriveType']}</span>
                                 </div>
                                 <div className='feature-card'>
                                     <img height="20px" src={door} alt="door" />
@@ -52,8 +53,8 @@ const Fleet = (props) => {
                                     <span>{el.Vehicle['@PassengerQuantity']}</span>
                                 </div>
                                 <div className='feature-card'>
-                                    <TbManualGearbox style={{ fontSize: '22px' }} />
-                                    <span>{el.Vehicle['@DriveType']}</span>
+                                    <img height="20px" src={fuel} alt="fuel" />
+                                    <span>{el.Vehicle['@FuelType']}</span>
                                 </div>
                             </div>
                         </div>
@@ -62,9 +63,11 @@ const Fleet = (props) => {
                             <p>With {el.Vendor['@Name'].charAt(0).toUpperCase() + el.Vendor['@Name'].slice(1).toLowerCase()}</p>
                         </div>
                     </div>
-                ))
-                    : <React.Fragment></React.Fragment>}
+                    ))}
             </div>
+            : <React.Fragment>
+                <Loader />
+            </React.Fragment>}
         </div>
     )
 }

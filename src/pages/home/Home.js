@@ -4,11 +4,12 @@ import Filters from '../../components/filters/Filters';
 import Fleet from '../../components/fleet/Fleet';
 import Vendor from '../../components/vendor/Vendor';
 import './Home.css';
+import Legend from '../../components/location/Legend';
 
 const Home = () => {
     const [fleet, setFleet] = React.useState();
     const [priceFilter, setPriceFilter] = React.useState('lower-to-higher');
-    const [sortedCars, setSortedCars] = React.useState();
+    const [sortedCars, setSortedCars] = React.useState(null);
     let vehicles = cars[0].VehAvailRSCore.VehVendorAvails;
 
     const sortLowestToHighest = () => {
@@ -49,6 +50,7 @@ const Home = () => {
 
     return (
         <div className='body'>
+            <Legend />
             <div className='container box'>
                 <div className='grid-container'>
                     <div className='grid-left'>

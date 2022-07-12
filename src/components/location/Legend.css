@@ -1,0 +1,26 @@
+.legend {
+    background-color: #E6356F;
+    padding: 4px 0px 8px 0px;
+}
+
+.legend .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.legend .grid-container div label, .legend .grid-container div input {
+    display: block;
+}
+
+legend .grid-container div label {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.legend .grid-container div input {
+   padding: 10px;
+   border-radius: 4px; 
+   border: 1px solid  #64748B;
+   margin-bottom: 2px;
+   width: 90%;
+}
