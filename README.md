@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### `How to setup Cartrawler project`
+Clone the project to your local machine and run npm install --legacy-peer-deps
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -13,9 +16,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `HOW TO SET UP PROJECT`
-Clone the project to your local machine and run npm install --legacy-peer-deps
 
 ### `npm test`
 
