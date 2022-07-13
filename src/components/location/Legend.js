@@ -30,19 +30,19 @@ const Legend = (props) => {
                 <div className='grid-container'>
                     <div>
                         <label>Pick-up Location</label>
-                        <input className='form-control' value={props.vehicles.VehRentalCore.PickUpLocation['@Name']} />
+                        <input className='form-control' defaultValue={props.vehicles.VehRentalCore.PickUpLocation['@Name']} />
                     </div>
                     <div>
                         <label>Return Location</label>
-                        <input className='form-control' value={props.vehicles.VehRentalCore.ReturnLocation['@Name']} />
+                        <input className='form-control' defaultValue={props.vehicles.VehRentalCore.ReturnLocation['@Name']} />
                     </div>
                     <div>
                         <label>Pick-up date</label>
-                        <input className='form-control' type="datetime-local" value={formatDate(props.vehicles.VehRentalCore['@PickUpDateTime'])} />
+                        <input className='form-control' type="datetime-local" defaultValue={formatDate(props.vehicles.VehRentalCore['@PickUpDateTime'])} />
                     </div>
                     <div>
                         <label>Drop-off date</label>
-                        <input className='form-control' type="datetime-local" value={formatDate(props.vehicles.VehRentalCore['@ReturnDateTime'])} />
+                        <input className='form-control' type="datetime-local" defaultValue={formatDate(props.vehicles.VehRentalCore['@ReturnDateTime'])} />
                     </div>
                 </div>
             </div>

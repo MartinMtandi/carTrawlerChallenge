@@ -2,23 +2,26 @@ import React from 'react';
 import cars from '../../utils/cars.json';
 import Filters from '../../components/filters/Filters';
 import Fleet from '../../components/fleet/Fleet';
-import Vendor from '../../components/vendor/Vendor';
 import './Home.css';
 import Legend from '../../components/location/Legend';
+import CarDetails from '../../components/fleet/CarDetails';
 
 const Home = () => {
     const [fleet, setFleet] = React.useState();
     const [priceFilter, setPriceFilter] = React.useState('lower-to-higher');
     const [sortedCars, setSortedCars] = React.useState(null);
+    const [page, setPage] = React.useState('details');
     let vehicles = cars[0].VehAvailRSCore.VehVendorAvails;
 
     const sortLowestToHighest = () => {
+        // setPage('home');
         return fleet?.sort(function(a, b) { // SORT BY PRICE (LOWER TO HIGHER)
             return Number(a.TotalCharge['@EstimatedTotalAmount']) - Number(b.TotalCharge['@EstimatedTotalAmount']);
         });
     }
 
     const sortHighestToLowest = () => {
+        // setPage('home');
         return fleet?.sort(function(a, b) { // SORT BY PRICE (HIGHEST TO LOWEST)
             return Number(b.TotalCharge['@EstimatedTotalAmount']) - Number(a.TotalCharge['@EstimatedTotalAmount']);
         });
@@ -48,6 +51,20 @@ const Home = () => {
         }
     }, [fleet]);
 
+
+    let content;
+
+    switch (page) {
+        case 'home':
+            content = <Fleet sortedCars={sortedCars} />
+            break;
+        case 'details':
+            content = <CarDetails setPage={setPage} />
+            break;
+        default:
+            break;
+    }
+
     return (
         <div className='body'>
             <Legend vehicles={cars[0].VehAvailRSCore} />
@@ -63,7 +80,7 @@ const Home = () => {
                         />
                     </div>
                     <div>
-                        <Fleet sortedCars={sortedCars} />
+                        {content}
                     </div>
                 </div>
             </div>

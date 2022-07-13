@@ -122,3 +122,119 @@
 .grid-middle {
     margin: 0 auto;
 }
+
+/* CAR DETAILS STYLING */
+
+.inline-flex {
+    padding: 10px 30px 30px 30px;
+    border-bottom: 1px solid #C7C7CD;
+    display: flex;
+    align-items: center;
+}
+
+.inline-flex .car-desc {
+    margin-left: 30px;
+    line-height: 0px;
+}
+
+.inline-flex .car-desc .car-name {
+    font-weight: 600;
+    margin-left: 5px;
+    font-size: x-large;
+}
+
+.features-container .list-item {
+    margin-bottom: 5px;
+} 
+
+.code-context {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.code-context button {
+    padding: 5px 6px;
+    background-color: #ccc;
+    font-weight: 600;
+    color: #4b5563;
+    border-radius: 6px;
+    border: none;
+    cursor: default;
+}
+
+.addons {
+    padding: 10px 30px 15px 30px;
+    border-bottom: 1px solid #C7C7CD;
+    display: grid;
+    line-height: 0px;
+    grid-template-columns: auto auto auto;
+}
+
+.addons-item {
+    display: flex;
+    align-items: center;
+}
+
+.addons-info {
+    line-height: 0px;
+    margin-left: 6px;
+}
+
+.addons-title {
+    font-weight: 600;
+}
+
+.addons-desc {
+    font-size: larger;
+} 
+
+.check {
+    font-size: 22px;
+    color: #059669;
+}
+
+.banner {
+    color: #059669;
+    cursor: default;
+    outline: none;
+    border: none;
+    background-color: #a7f3d0;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.banner-wrapper {
+    text-align: right;
+}
+
+.addons-footer {
+    padding: 20px 30px 15px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addons-footer div {
+    line-height: 2px;
+}
+
+.addons-footer div p {
+    color: #6b7280;
+    font-size: small;
+}
+
+.back-btn {
+    border: none;
+    background-color: #E6356F;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px 6px;
+    border-radius: 2px;
+}
+
+.contain-btn {
+    text-align: right;
+    margin-right: 30px;
+}
