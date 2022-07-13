@@ -34,7 +34,7 @@ const Fleet = (props) => {
                                     <img height="20px" src={suitcase} alt="suitcase" />
                                     <span>{el.Vehicle['@BaggageQuantity']}</span>
                                 </div>
-                                <div className='feature-card sm-hidden'>
+                                <div className='feature-card'>
                                     <TbManualGearbox style={{ fontSize: '22px' }} />
                                     <span>{el.Vehicle['@DriveType']}</span>
                                 </div>

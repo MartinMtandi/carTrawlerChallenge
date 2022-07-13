@@ -7,7 +7,7 @@ const Wrapper = (props) => {
     <div>
         <Header />
             {props.children}
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }

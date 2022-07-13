@@ -244,10 +244,6 @@
         display: block;
     }
 
-    .sm-hidden {
-        display: none;
-    }
-
     .card div .car-name {
         font-size: 18px;
     }
@@ -267,6 +263,7 @@
 
     .features-container {
         grid-template-columns: auto auto;
+        margin-top: 0px;
     }
 
     .addons {
@@ -275,5 +272,9 @@
 
     .banner-wrapper {
         text-align: center;
+    }
+
+    .feature-card {
+        margin: 3px 3px !important;
     }
 }
