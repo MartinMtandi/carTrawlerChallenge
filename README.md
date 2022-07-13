@@ -14,6 +14,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### HOW TO SET UP PROJECT
+Clone the project to your local machine and run npm install --legacy-peer-deps
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
