@@ -62,7 +62,7 @@ const Home = () => {
             content = <Fleet setPage={setPage} sortedCars={sortedCars} setCarDetail={setCarDetail} />
             break;
         case 'details':
-            content = <CarDetails setPage={setPage} cardetail={cardetail} />
+            content = <CarDetails vehicles={cars[0].VehAvailRSCore} setPage={setPage} cardetail={cardetail} />
             break;
         default:
             break;

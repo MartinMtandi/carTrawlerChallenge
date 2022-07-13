@@ -14,8 +14,7 @@ import Avis from '../../images/Vendors/avis.svg';
 import Hertz from '../../images/Vendors/hertz.svg';
 import CurrencyFormat from 'react-currency-format';
 
-const CarDetails = ({cardetail, setPage}) => {
-  console.log(cardetail);
+const CarDetails = ({cardetail, setPage, vehicles}) => {
 
   let content;
 
@@ -96,7 +95,7 @@ const CarDetails = ({cardetail, setPage}) => {
             </div>
             <div className='addons-info'>
               <p className='addons-title'>Pick-up Location</p>
-              <p className='addons-desc'>Dublin Airport</p>
+              <p className='addons-desc'>{vehicles.VehRentalCore.PickUpLocation['@Name']}</p>
             </div>
           </div>
         </div>
