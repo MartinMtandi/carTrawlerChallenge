@@ -1,6 +1,9 @@
 {
   "name": "cartrawler",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.15.1"
+  },
   "private": true,
   "proxy": "http://www.cartrawler.com/ctabe/cars.json",
   "dependencies": {
