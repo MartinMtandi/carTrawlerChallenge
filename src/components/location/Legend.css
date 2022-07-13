@@ -28,3 +28,13 @@
    box-sizing: border-box;
    font-size: large;
 }
+
+@media only screen and (max-width: 600px) {
+    .legend .grid-container {
+        display: block;
+    }
+
+    .legend .grid-container div .form-control {
+        margin-bottom: 8px;
+    }
+}

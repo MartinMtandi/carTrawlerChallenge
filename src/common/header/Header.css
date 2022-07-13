@@ -19,3 +19,13 @@
     list-style-type: none;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    .nav {
+        display: block !important;
+    }
+
+    .nav-item {
+        display: none;
+    }
+}

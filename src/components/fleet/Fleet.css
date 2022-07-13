@@ -238,3 +238,42 @@
     text-align: right;
     margin-right: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+    .paper .grid-card {
+        display: block;
+    }
+
+    .sm-hidden {
+        display: none;
+    }
+
+    .card div .car-name {
+        font-size: 18px;
+    }
+
+    .inline-flex {
+        display: block;
+    }
+
+    .car-image {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .inline-flex .car-desc {
+        margin-left: 0px;
+    }
+
+    .features-container {
+        grid-template-columns: auto auto;
+    }
+
+    .addons {
+        display: block;
+    }
+
+    .banner-wrapper {
+        text-align: center;
+    }
+}

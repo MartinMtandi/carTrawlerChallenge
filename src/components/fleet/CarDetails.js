@@ -38,7 +38,7 @@ const CarDetails = ({cardetail, setPage, vehicles}) => {
       </div>
       <section className='inline-flex'>
         <div>
-          <img height={110} src={cardetail?.Vehicle.PictureURL} alt="cars" />
+          <img className='car-image' height={110} src={cardetail?.Vehicle.PictureURL} alt="cars" />
         </div>
         <div className='car-desc'>
           <p className='car-name'>{cardetail?.Vehicle.VehMakeModel['@Name']}</p>
