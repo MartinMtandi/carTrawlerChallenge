@@ -11,17 +11,20 @@ const Home = () => {
     const [priceFilter, setPriceFilter] = React.useState('lower-to-higher');
     const [sortedCars, setSortedCars] = React.useState(null);
     const [page, setPage] = React.useState('details');
+    const [cardetail, setCarDetail] = React.useState(null);
     let vehicles = cars[0].VehAvailRSCore.VehVendorAvails;
 
     const sortLowestToHighest = () => {
-        // setPage('home');
+        setPage('home');
+        setCarDetail(null);
         return fleet?.sort(function(a, b) { // SORT BY PRICE (LOWER TO HIGHER)
             return Number(a.TotalCharge['@EstimatedTotalAmount']) - Number(b.TotalCharge['@EstimatedTotalAmount']);
         });
     }
 
     const sortHighestToLowest = () => {
-        // setPage('home');
+        setPage('home');
+        setCarDetail(null);
         return fleet?.sort(function(a, b) { // SORT BY PRICE (HIGHEST TO LOWEST)
             return Number(b.TotalCharge['@EstimatedTotalAmount']) - Number(a.TotalCharge['@EstimatedTotalAmount']);
         });
@@ -56,10 +59,10 @@ const Home = () => {
 
     switch (page) {
         case 'home':
-            content = <Fleet sortedCars={sortedCars} />
+            content = <Fleet setPage={setPage} sortedCars={sortedCars} setCarDetail={setCarDetail} />
             break;
         case 'details':
-            content = <CarDetails setPage={setPage} />
+            content = <CarDetails setPage={setPage} cardetail={cardetail} />
             break;
         default:
             break;

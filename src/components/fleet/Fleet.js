@@ -11,6 +11,11 @@ import './Fleet.css';
 import Loader from '../../common/loader/Loader';
 
 const Fleet = (props) => {
+
+    const handleCarDetail = (car) => {
+        props.setCarDetail(car);
+        props.setPage('details');
+    }
   
     return (
         <div className='paper'>
@@ -37,7 +42,7 @@ const Fleet = (props) => {
                                     <img height="20px" src={door} alt="door" />
                                     <span>{el.Vehicle['@DoorCount']}</span>
                                 </div>
-                                {el.Vehicle['@AirConditionInd'] &&
+                                {(el.Vehicle['@AirConditionInd'] === 'true') &&
                                     <div className='feature-card'>
                                         <img height="20px" src={snowflake} alt="snowflake" />
                                     </div>
@@ -59,7 +64,7 @@ const Fleet = (props) => {
                             </div>
                         </div>
                         <div className='button-component'>
-                            <button className='btn-primary'>Book</button>
+                            <button disabled={el['@Status'] === 'Available' ? false : true} onClick={() => handleCarDetail(el)} className='btn-primary'>Book</button>
                             <p>With {el.Vendor['@Name'].charAt(0).toUpperCase() + el.Vendor['@Name'].slice(1).toLowerCase()}</p>
                         </div>
                     </div>

@@ -10,51 +10,54 @@ import { MdLocationPin } from 'react-icons/md';
 import { MdLocalGasStation } from 'react-icons/md';
 import { BsCheck } from 'react-icons/bs';
 import Alamo from '../../images/Vendors/alamo.svg';
+import CurrencyFormat from 'react-currency-format';
 
-const CarDetails = (props) => {
+const CarDetails = ({cardetail, setPage}) => {
+  console.log(cardetail)
   return (
     <div className='paper'>
       <div className='contain-btn'>
-        <button onClick={() => props.setPage('home')} className='back-btn'>Back</button>
+        <button onClick={() => setPage('home')} className='back-btn'>Back</button>
       </div>
       <section className='inline-flex'>
         <div>
-          <img src="https://www.discovercars.com/images/car/7655/200.png" alt="cars" />
+          <img height={110} src={cardetail?.Vehicle.PictureURL} alt="cars" />
         </div>
         <div className='car-desc'>
-          <p className='car-name'>Mazda 626</p>
+          <p className='car-name'>{cardetail?.Vehicle.VehMakeModel['@Name']}</p>
           <div className='features-container wrap'>
             <div className='feature-card list-item'>
               <img height="20px" src={suitcase} alt="suitcase" />
-              <span>23 Bags</span>
+              <span>{cardetail?.Vehicle['@BaggageQuantity']} Bags</span>
             </div>
             <div className='feature-card list-item'>
               <TbManualGearbox style={{ fontSize: '22px' }} />
-              <span>Automatic</span>
+              <span>{cardetail?.Vehicle['@DriveType']}</span>
             </div>
             <div className='feature-card list-item'>
               <img height="20px" src={door} alt="door" />
-              <span>4 Doors</span>
+              <span>{cardetail?.Vehicle['@DoorCount']} Doors</span>
             </div>
+            {(cardetail?.Vehicle['@AirConditionInd'] === 'true') && 
             <div className='feature-card list-item'>
               <img height="20px" src={snowflake} alt="snowflake" />
               <span>Air Conditioning</span>
-            </div>
+            </div>}
             <div className='feature-card list-item'>
               <img height="20px" src={transmission} alt="transmission" />
-              <span>Unspecified</span>
+              <span>{cardetail?.Vehicle['@TransmissionType']}</span>
             </div>
             <div className='feature-card list-item'>
               <img height="20px" src={person} alt="person" />
-              <span>6 Passengers</span>
+              <span>{cardetail?.Vehicle['@PassengerQuantity']} Passengers</span>
             </div>
             <div className='feature-card list-item'>
               <img height="20px" src={fuel} alt="fuel" />
-              <span>Petrol</span>
+              <span>{cardetail?.Vehicle['@FuelType']}</span>
             </div>
           </div>
           <div className='code-context'>
-            <button>CARTRAWLER</button>
+            <button>{cardetail?.Vehicle['@CodeContext']}</button>
           </div>
         </div>
       </section>
@@ -107,7 +110,9 @@ const CarDetails = (props) => {
         </div>
         <div>
           <p>Rental cost per day</p>
-          <h1>$ 120.00</h1>
+          <h1>
+            <CurrencyFormat value={cardetail?.TotalCharge['@EstimatedTotalAmount']} displayType={'text'} thousandSeparator={true} prefix={cardetail?.TotalCharge['@CurrencyCode']} />
+          </h1>
         </div>
       </section>
     </div>
