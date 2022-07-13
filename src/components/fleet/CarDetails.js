@@ -10,10 +10,28 @@ import { MdLocationPin } from 'react-icons/md';
 import { MdLocalGasStation } from 'react-icons/md';
 import { BsCheck } from 'react-icons/bs';
 import Alamo from '../../images/Vendors/alamo.svg';
+import Avis from '../../images/Vendors/avis.svg';
+import Hertz from '../../images/Vendors/hertz.svg';
 import CurrencyFormat from 'react-currency-format';
 
 const CarDetails = ({cardetail, setPage}) => {
-  console.log(cardetail)
+  console.log(cardetail);
+
+  let content;
+
+  switch (cardetail?.Vendor['@Name']) {
+    case 'AVIS':
+      content = <img src={Avis} alt="vendor" />
+      break;
+    case 'HERTZ':
+      content = <img src={Hertz} alt="vendor" />
+      break;
+    case 'ALAMO':
+      content = <img src={Alamo} alt="vendor" />
+      break;
+    default:
+      break;
+  }
   return (
     <div className='paper'>
       <div className='contain-btn'>
@@ -106,7 +124,7 @@ const CarDetails = ({cardetail, setPage}) => {
       </section>
       <section className='addons-footer'>
         <div>
-          <img src={Alamo} alt="vendor" />
+          {content}
         </div>
         <div>
           <p>Rental cost per day</p>
